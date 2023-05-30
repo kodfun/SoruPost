@@ -16,25 +16,20 @@
 <body>
   <div id="app">
     <div ref="canvasContainer"></div>
-    <form>
+    <div>
       <div>
-        <label for="soru">Soru:</label>
-        <input type="text" id="soru" v-model="soru">
+        <textarea id="soru" cols="35" rows="3" v-model="soru" placeholder="Sorunuz.."></textarea>
       </div>
       <div>
-        <label for="opt1">Şık 1:</label>
-        <input type="text" id="opt1" v-model="opt1">
+        <textarea id="opt1" cols="35" rows="2" v-model="opt1" placeholder="Şık 1"></textarea>
       </div>
       <div>
-        <label for="opt2">Şık 2:</label>
-        <input type="text" id="opt2" v-model="opt2">
+        <textarea id="opt2" cols="35" rows="2" v-model="opt2" placeholder="Şık 2"></textarea>
       </div>
       <div>
-        Satır Adedi: {{ satirAdet }}
+        <button @click="kaydet()">Resmi Kaydet</button>
       </div>
-    </form>
-
-    {{soru}}
+    </div>
   </div>
 
   <script src="js/index.js"></script>

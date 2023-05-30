@@ -1,3 +1,10 @@
+// todo: 
+// 1. font boyutu ayarlama range inputu ekle
+// 2. background resmi ayarla
+// 3. logo/brand ekle
+// 4. belki konuyla ilgili otomatik resim (belki api png)
+
+
 const { createApp } = Vue;
 
 createApp({
@@ -6,7 +13,8 @@ createApp({
       soru: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum!',
       opt1: 'Lorem',
       opt2: 'Ipsum',
-      satirAdet: 0
+      satirAdet: 0,
+      p5: null
     };
   },
   mounted() {
@@ -15,7 +23,8 @@ createApp({
   methods: {
     createSketch(p) {
       p.setup = () => {
-        p.createCanvas(400, 400);
+        p.createCanvas(300, 300);
+        this.p5 = p;
         // Your p5.js sketch setup code here
       };
       
@@ -68,6 +77,9 @@ createApp({
       
     
       return lineCount;
+    },
+    kaydet() {
+      this.p5.saveCanvas('post', 'png');
     }
   }
 }).mount('#app');
