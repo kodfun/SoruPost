@@ -3,6 +3,7 @@
 // 2. background resmi ayarla
 // 3. logo/brand ekle
 // 4. belki konuyla ilgili otomatik resim (belki api png)
+// 5. doğrudan paylaşma butonu (instaya atma)???
 
 
 const { createApp } = Vue;
