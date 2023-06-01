@@ -1,0 +1,19 @@
+body {
+  background-color: #dddddd;
+}
+
+canvas {
+  width: 65% !important;
+  height: auto !important;
+}
+
+@media (min-width: 768px) {
+  canvas {
+    width: 500px !important;
+    height: auto !important;
+  }
+}
+
+textarea {
+  max-width: 100%;
+}

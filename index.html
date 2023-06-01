@@ -10,24 +10,37 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div id="app">
-    <div ref="canvasContainer"></div>
+  <div id="app" class="container">
+    <div ref="canvasContainer" class="my-2 d-flex justify-content-center"></div>
     <div>
-      <div>
-        <textarea id="soru" cols="35" rows="3" v-model="soru" placeholder="Sorunuz.."></textarea>
+      <div class="mb-2 form-group">
+        <label for="yuzde">Yazı Boyut Yüzdesi: {{yaziBoyutYuzdesi}}%</label> 
+        <input class="form-range" id="yuzde" type="range" min="1" max="100" v-model="yaziBoyutYuzdesi"> 
       </div>
-      <div>
-        <textarea id="opt1" cols="35" rows="2" v-model="opt1" placeholder="Şık 1"></textarea>
+      <div class="mb-2">
+        <textarea class="form-control" id="soru" cols="80" rows="3" v-model="soru" placeholder="Sorunuz.."></textarea>
       </div>
-      <div>
-        <textarea id="opt2" cols="35" rows="2" v-model="opt2" placeholder="Şık 2"></textarea>
+      <div class="mb-2">
+        <textarea class="form-control" id="opt1" cols="35" rows="1" v-model="opt1" placeholder="Şık 1"></textarea>
       </div>
-      <div>
-        <button @click="kaydet()">Resmi Kaydet</button>
+      <div class="mb-2">
+        <textarea class="form-control" id="opt2" cols="35" rows="1" v-model="opt2" placeholder="Şık 2"></textarea>
+      </div>
+      <div class="mb-2">
+        <button @click="temizle()" class="btn btn-primary me-2">Temizle</button>
+        <button @click="kaydet()" class="btn btn-primary">Resmi Kaydet</button>
+        <hr>
+        {{canvas?.elt.width}} x {{canvas?.elt.height}}
       </div>
     </div>
   </div>
